@@ -3,14 +3,16 @@ import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { webpackBundler } from "@payloadcms/bundler-webpack";
 import { slateEditor } from "@payloadcms/richtext-slate";
 import path from "path";
+import { Users } from "./collections/Users";
 
 export default buildConfig({
   serverURL: process.env.NEXT_SERVER_PUBLIC_URL || "",
-  collections: [],
+  collections: [Users],
   routes: {
     admin: "/sell",
   },
   admin: {
+    user: "users",
     bundler: webpackBundler(),
     meta: {
       titleSuffix: "- HippoPlace",
