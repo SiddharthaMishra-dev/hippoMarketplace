@@ -11,7 +11,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const page = () => {
+const Page = () => {
   const { items, removeItem } = useCart();
 
   const [isMounted, setIsMounted] = useState(false);
@@ -195,4 +195,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

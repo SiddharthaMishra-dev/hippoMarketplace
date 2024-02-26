@@ -19,7 +19,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { ZodError } from "zod";
 
-const page = () => {
+const Page = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const isSeller = searchParams.get("as") === "seller";
@@ -155,4 +155,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
