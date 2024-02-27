@@ -4,8 +4,14 @@ import payload, { Payload } from "payload";
 import { InitOptions } from "payload/config";
 import nodemailer from "nodemailer";
 
+let envLocation = "../.env";
+if (process.env.NODE_ENV != "production") {
+  envLocation = ".env";
+}
+
 dotenv.config({
-  path: path.resolve(__dirname, ".env"),
+  path: path.resolve(__dirname, "../.env"),
+  // path: path.resolve(__dirname, ".env"),
 });
 
 const transporter = nodemailer.createTransport({

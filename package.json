@@ -5,8 +5,12 @@
   "scripts": {
     "dev": "cross-env PAYLOAD_CONFIG_PATH=payload.config.ts nodemon",
     "generate:types": "cross-env PAYLOAD_CONFIG_PATH=payload.config.ts payload generate:types",
-    "build": "next build",
-    "start": "next start",
+    "build:payload": "cross-env PAYLOAD_CONFIG_PATH=payload.config.ts payload build",
+    "build:server": "tsc --project tsconfig.server.json",
+    "build:next": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NEXT_BUILD=true node dist/server.js",
+    "build": "cross-env NODE_ENV=production pnpm build:payload && pnpm build:server && pnpm copyfiles && pnpm build:next",
+    "copyfiles": "copyfiles -u 1 \"./**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png}\" dist/",
+    "start": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production node dist/server.js",
     "lint": "next lint"
   },
   "dependencies": {
@@ -34,6 +38,7 @@
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
     "lucide-react": "^0.315.0",
+    "mongoose": "^8.2.0",
     "next": "14.1.0",
     "payload": "^2.9.0",
     "react": "^18",
@@ -56,6 +61,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "copyfiles": "^2.4.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "nodemailer": "^6.9.9",
