@@ -8,17 +8,17 @@ exports.PRODUCT_CATEGORIES = [
         featured: [
             {
                 name: "Editor picks",
-                href: "#",
+                href: "/products?category=ui_kits",
                 imageSrc: "/nav/ui-kits/mixed.jpg",
             },
             {
                 name: "New Arrivals",
-                href: "#",
+                href: "/products?category=ui_kits&sort=desc",
                 imageSrc: "/nav/ui-kits/blue.jpg",
             },
             {
-                name: "BestSellers",
-                href: "#",
+                name: "Bestsellers",
+                href: "/products?category=ui_kits",
                 imageSrc: "/nav/ui-kits/purple.jpg",
             },
         ],
@@ -28,18 +28,18 @@ exports.PRODUCT_CATEGORIES = [
         value: "icons",
         featured: [
             {
-                name: "Our favourite pick",
-                href: "#",
+                name: "Favorite Icon Picks",
+                href: "/products?category=icons",
                 imageSrc: "/nav/icons/picks.jpg",
             },
             {
                 name: "New Arrivals",
-                href: "#",
+                href: "/products?category=icons&sort=desc",
                 imageSrc: "/nav/icons/new.jpg",
             },
             {
-                name: "BestSelling Icons",
-                href: "#",
+                name: "Bestselling Icons",
+                href: "/products?category=icons",
                 imageSrc: "/nav/icons/bestsellers.jpg",
             },
         ],

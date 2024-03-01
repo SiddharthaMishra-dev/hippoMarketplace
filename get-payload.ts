@@ -10,8 +10,8 @@ if (process.env.NODE_ENV != "production") {
 }
 
 dotenv.config({
-  // path: path.resolve(__dirname, "../.env"),
-  path: path.resolve(__dirname, ".env"),
+  path: path.resolve(__dirname, "../.env"),
+  // path: path.resolve(__dirname, ".env"),
 });
 
 const transporter = nodemailer.createTransport({
